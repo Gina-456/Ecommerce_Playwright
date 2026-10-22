@@ -1,0 +1,22 @@
+
+# Playwright
+node_modules/
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
+/playwright/.auth/
+.env
+
+# Generated reports & artifacts
+/allure-results/
+/allure-report/
+/reports/
+/custom-report/
+*.log
+
+# Local tooling / personal config
+/.claude/
+/playwright-mcp-context.md
+/env_setup.bat
+/*.yml
