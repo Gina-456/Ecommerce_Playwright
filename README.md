@@ -380,7 +380,8 @@ A custom reporter (`utils/CustomReporter.ts`) generates a branded HTML dashboard
 * Video and trace links
 * Timeline and chart visualizations
 
-![c61d0b51-fac4-4a42-bbcf-e0d714ed4f19](file:///C:/Users/g6696/OneDrive/Pictures/Typedown/c61d0b51-fac4-4a42-bbcf-e0d714ed4f19.png)
+<img width="943" height="491" alt="image" src="https://github.com/user-attachments/assets/4d92e00f-2b76-4a52-b022-dab561d5b7f1" />
+
 -------------------------
 
 📋 Coding Guidelines
