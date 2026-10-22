@@ -349,7 +349,8 @@ test("GET - All Products @master @sanity @api", async ({ request }) => {
 open reports/index.html
 ```
 
-![22df54b8-ad76-4ed6-a935-a4a3c5f428f2](file:///C:/Users/g6696/OneDrive/Pictures/Typedown/22df54b8-ad76-4ed6-a935-a4a3c5f428f2.png)
+<img width="656" height="478" alt="image" src="https://github.com/user-attachments/assets/d380d3af-368c-4a02-947b-d2213bbe804a" />
+
 
 ### 2️⃣ Allure Report
 
@@ -367,7 +368,8 @@ Alternatively, to run the full suite and generate the report in one step:
 npm run report:all
 ```
 
-![33716263-8253-40b0-83b6-8a7188db4332](file:///C:/Users/g6696/OneDrive/Pictures/Typedown/33716263-8253-40b0-83b6-8a7188db4332.png) 
+<img width="764" height="482" alt="image" src="https://github.com/user-attachments/assets/8137ef42-3833-4ad1-9255-821d7078ad98" />
+
 
 ### 3️⃣ Custom HTML Dashboard
 
