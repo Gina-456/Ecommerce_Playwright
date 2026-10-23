@@ -123,9 +123,9 @@ APP_ENV=qa # qa | prod | dev
 
 ### 🌐 WEB APP CONFIGURATION ####
 # 🔗 WEB APP URL
-WEB_APP_URL=http://localhost/opencart/upload/
+# WEB_APP_URL=http://localhost/opencart/upload/
 # WEB_APP_URL=https://tutorialsninja.com/demo/
-# WEB_APP_URL=https://awesomeqa.com/ui/
+WEB_APP_URL=https://awesomeqa.com/ui/
 
 # 🔐 WEB APP LOGIN CREDENTIALS (CREATE YOUR OWN CREDENTIALS)
 APP_EMAIL=your-email@example.com
