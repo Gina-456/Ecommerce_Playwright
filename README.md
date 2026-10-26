@@ -397,4 +397,4 @@ A custom reporter (`utils/CustomReporter.ts`) generates a branded HTML dashboard
 
 
 
-Note: Database validation test cases and Git + Jenkins CI/CD integration will be implemented in the next phase.
+Note: Database+accessibility validation test cases and Git + Jenkins CI/CD integration will be implemented in the next phase.
