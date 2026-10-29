@@ -1,7 +1,7 @@
 /**
  * Test Case: Product Search Flow
  *
- * Tags: @master @sanity @regression
+ * Tags: @master @smoke @regression
  *
  * Steps:
  * 1) Open the application
@@ -17,7 +17,7 @@
 import { test, expect } from '../../fixtures/pageFixtures';
 import { Helper } from '../../utils/helper';
 
-test('Product search flow test @master @sanity @regression', async ({ homePage, searchResultsPage }) => {
+test('Product search flow test @master @smoke @regression', async ({ homePage, searchResultsPage }) => {
     const product = Helper.getShoppingProductDetails();
 
     await test.step('1) Open the application', async () => {

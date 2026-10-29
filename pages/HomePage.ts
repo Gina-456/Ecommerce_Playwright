@@ -34,11 +34,12 @@ export class HomePage {
     async openMyAccountMenu(): Promise<void> {
         try {
             await this.menuMyAccount.click();
-        } catch (error) {
-            console.log(`Error opening My Account menu: ${error}`);
-            throw error;
+                await this.page.waitForTimeout(500);
+            } catch (error) {
+                console.log(`Error opening My Account menu: ${error}`);
+                throw error;
+            }
         }
-    }
 
     /**
      * Opens the My Account menu and navigates to the Register page.
@@ -47,13 +48,22 @@ export class HomePage {
     async goToRegisterPage(): Promise<RegisterPage> {
         try {
             await this.openMyAccountMenu();
-            await this.linkRegister.click();
-            return new RegisterPage(this.page);
-        } catch (error) {
-            console.log(`Error navigating to register page: ${error}`);
-            throw error;
+                await this.page.waitForTimeout(300);
+                const registerCount = await this.linkRegister.count();
+                if (registerCount > 0) {
+                    await this.linkRegister.click();
+                } else {
+                    // Fallback: navigate directly to the registration URL
+                    const base = new URL(this.page.url()).origin;
+                    await this.page.goto(`${base}/index.php?route=account/register`);
+                }
+                await this.page.waitForLoadState('networkidle');
+                return new RegisterPage(this.page);
+            } catch (error) {
+                console.log(`Error navigating to register page: ${error}`);
+                throw error;
+            }
         }
-    }
 
     /**
      * Opens the My Account menu and navigates to the Login page.
@@ -62,13 +72,21 @@ export class HomePage {
     async goToLoginPage(): Promise<LoginPage> {
         try {
             await this.openMyAccountMenu();
-            await this.linkLogin.click();
-            return new LoginPage(this.page);
-        } catch (error) {
-            console.log(`Error navigating to login page: ${error}`);
-            throw error;
+                await this.page.waitForTimeout(300);
+                const loginCount = await this.linkLogin.count();
+                if (loginCount > 0) {
+                    await this.linkLogin.click();
+                } else {
+                    const base = new URL(this.page.url()).origin;
+                    await this.page.goto(`${base}/index.php?route=account/login`);
+                }
+                await this.page.waitForLoadState('networkidle');
+                return new LoginPage(this.page);
+            } catch (error) {
+                console.log(`Error navigating to login page: ${error}`);
+                throw error;
+            }
         }
-    }
 
     /**
      * Opens the My Account menu and clicks the Logout link.

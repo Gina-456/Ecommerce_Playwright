@@ -19,7 +19,7 @@ test.describe('Products API Tests', () => {
     // GET - All Products
     // ---------------------------------------------------------
 
-    test('GET - All products @master @sanity @api', async ({ request }) => {
+    test('GET - All products @master @smoke @api', async ({ request }) => {
 
         const response = await request.get(`${BASE_URL}${Routes.GET_ALL_PRODUCTS}`);
 
@@ -43,7 +43,7 @@ test.describe('Products API Tests', () => {
     // GET - Product by ID
     // ---------------------------------------------------------
 
-    test('GET - Product by ID @master @sanity @api', async ({ request }) => {
+    test('GET - Product by ID @master @smoke @api', async ({ request }) => {
 
         const response = await request.get(`${BASE_URL}${Routes.GET_PRODUCT_BY_ID.replace('{id}', String(PRODUCT_ID))}`);
 
@@ -114,7 +114,7 @@ test.describe('Products API Tests', () => {
     // GET - All Product Categories
     // ---------------------------------------------------------
 
-    test('GET - All product categories @master @sanity @api', async ({ request }) => {
+    test('GET - All product categories @master @smoke @api', async ({ request }) => {
 
         const response = await request.get(`${BASE_URL}${Routes.GET_ALL_CATEGORIES}`);
 

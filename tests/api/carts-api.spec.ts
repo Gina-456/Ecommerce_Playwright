@@ -22,7 +22,7 @@ test.describe('Carts API Tests', () => {
     // GET - All Carts
     // ---------------------------------------------------------
 
-    test('GET - All carts @master @sanity @api', async ({ request }) => {
+    test('GET - All carts @master @smoke @api', async ({ request }) => {
 
         const response = await request.get(`${BASE_URL}${Routes.GET_ALL_CARTS}`);
 
@@ -38,7 +38,7 @@ test.describe('Carts API Tests', () => {
     // GET - Cart by ID
     // ---------------------------------------------------------
 
-    test('GET - Cart by ID @master @sanity @api', async ({ request }) => {
+    test('GET - Cart by ID @master @smoke @api', async ({ request }) => {
 
         const response = await request.get(`${BASE_URL}${Routes.GET_CART_BY_ID.replace('{id}', String(CART_ID))}`);
 

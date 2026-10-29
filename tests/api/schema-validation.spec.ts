@@ -23,7 +23,7 @@ test.describe('JSON Schema Validation API Tests', () => {
     // Product Response Schema
     // ---------------------------------------------------------
 
-    test('Product response matches JSON schema @master @sanity @api', async ({ request }) => {
+    test('Product response matches JSON schema @master @smoke @api', async ({ request }) => {
 
         const response = await request.get(`${BASE_URL}${Routes.GET_PRODUCT_BY_ID.replace('{id}', String(PRODUCT_ID))}`);
 
@@ -46,7 +46,7 @@ test.describe('JSON Schema Validation API Tests', () => {
     // User Response Schema
     // ---------------------------------------------------------
 
-    test('User response matches JSON schema @master @sanity @api', async ({ request }) => {
+    test('User response matches JSON schema @master @smoke @api', async ({ request }) => {
 
         const response = await request.get(`${BASE_URL}${Routes.GET_USER_BY_ID.replace('{id}', String(USER_ID))}`);
 
@@ -69,7 +69,7 @@ test.describe('JSON Schema Validation API Tests', () => {
     // Cart Response Schema
     // ---------------------------------------------------------
 
-    test('Cart response matches JSON schema @master @sanity @api', async ({ request }) => {
+    test('Cart response matches JSON schema @master @smoke @api', async ({ request }) => {
 
         const response = await request.get(`${BASE_URL}${Routes.GET_CART_BY_ID.replace('{id}', String(CART_ID))}`);
 

@@ -1,7 +1,7 @@
 /**
  * Test Case: Add Product to Cart
  *
- * Tags: @master @sanity @regression
+ * Tags: @master @smoke @regression
  *
  * Steps:
  * 1) Open the application
@@ -20,7 +20,7 @@
 import { test, expect } from '../../fixtures/pageFixtures';
 import { Helper } from '../../utils/helper';
 
-test('Add product to cart test @master @sanity @regression', async ({ homePage, searchResultsPage, productPage, cartPage }) => {
+test('Add product to cart test @master @smoke @regression', async ({ homePage, searchResultsPage, productPage, cartPage }) => {
     const product = Helper.getShoppingProductDetails();
 
     await test.step('1) Open the application', async () => {

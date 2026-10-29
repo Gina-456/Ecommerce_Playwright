@@ -1,7 +1,7 @@
 /**
  * Test Case: User Registration Flow
  *
- * Tags: @master @sanity @regression
+ * Tags: @master @smoke @regression
  *
  * Steps:
  * 1) Open the application
@@ -21,7 +21,7 @@ import { test, expect } from '../../fixtures/pageFixtures';
 import type { RegisterPage } from '../../pages/RegisterPage';
 import { Helper } from '../../utils/helper';
 
-test('User registration flow test @master @sanity @regression', async ({ homePage, accountPage }) => {
+test('User registration flow test @master @smoke @regression', async ({ homePage, accountPage }) => {
     const customer = Helper.generateCustomerData();
     let registerPage: RegisterPage;
 

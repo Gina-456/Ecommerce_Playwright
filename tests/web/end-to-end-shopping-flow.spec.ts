@@ -1,7 +1,7 @@
 /**
  * Test Case: End-to-End Shopping Flow
  *
- * Tags: @master @sanity @end-to-end
+ * Tags: @master @smoke @end-to-end
  *
  * Steps:
  * 1) Open the application
@@ -25,7 +25,7 @@
 import { test, expect } from '../../fixtures/pageFixtures';
 import { Helper } from '../../utils/helper';
 
-test('End-to-end shopping flow test @master @sanity @end-to-end', async ({ homePage, accountPage, searchResultsPage, productPage, cartPage }) => {
+test('End-to-end shopping flow test @master @smoke @end-to-end', async ({ homePage, accountPage, searchResultsPage, productPage, cartPage }) => {
     const product = Helper.getShoppingProductDetails();
     const customer = Helper.generateCustomerData();
 

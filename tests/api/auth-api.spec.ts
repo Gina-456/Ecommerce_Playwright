@@ -20,7 +20,7 @@ test.describe('Authentication API Tests', () => {
     // POST - Successful Login
     // ---------------------------------------------------------
 
-    test('POST - Login with valid credentials @master @sanity @api', async ({ request }) => {
+    test('POST - Login with valid credentials @master @smoke @api', async ({ request }) => {
 
         const response = await request.post(`${BASE_URL}${Routes.AUTH_LOGIN}`, {
             data: {

@@ -19,7 +19,7 @@ This framework provides a **unified, scalable automation solution** for testing 
 * ✅ **Page Object Model (POM)** — 8 reusable page classes for clean test code
 * ✅ **Custom Test Fixtures** — Type safe dependency injection for all page objects (`fixtures/pageFixtures.ts`)
 * ✅ **Multi-Layer Testing** — Web UI + REST API in a single framework
-* ✅ **Tag-Based Test Suites** — `@master`, `@sanity`, `@regression`, `@api`, `@end-to-end`, `@datadriven` (filter with `--grep`)
+* ✅ **Tag-Based Test Suites** — `@master`, `@smoke`, `@regression`, `@api`, `@end-to-end`, `@datadriven` (filter with `--grep`)
 * ✅ **Data-Driven Testing** — CSV, JSON, and Excel test data sources (via `DataReader`)
 * ✅ **Random Test Data Generation** — Powered by Faker.js
 * ✅ **Schema Validation** — JSON Schema validation for API responses via AJV
@@ -183,7 +183,7 @@ Tests are organized using Playwright's tag system (`@tag-name` in test titles). 
 | Tag           | Description                                                   |
 | ------------- | ------------------------------------------------------------- |
 | `@master`     | **Master suite** — all critical tests (every test carries it) |
-| `@sanity`     | **Sanity checks** — quick smoke tests                         |
+| `@smoke`     | **Smoke tests** — quick smoke checks                         |
 | `@regression` | **Full regression** — comprehensive coverage                  |
 | `@api`        | **API tests only**                                            |
 | `@end-to-end` | **End-to-end scenarios** (e.g. CRUD workflows, full shopping) |
@@ -203,7 +203,7 @@ npx playwright test
 ### Run by Tag (`--grep`)
 
 ```shell
-npx playwright test --grep "@sanity"            # Sanity tests only
+npx playwright test --grep "@smoke"            # Smoke tests only
 npx playwright test --grep "@regression"        # Regression tests
 npx playwright test --grep "@master @api"       # API tests (all carry @master)
 npx playwright test --grep "@datadriven"        # Data-driven tests
@@ -237,7 +237,7 @@ npx playwright test --project=chromium
 ### Run with grep (custom tag filter)
 
 ```shell
-npx playwright test --grep "@sanity"
+npx playwright test --grep "@smoke"
 npx playwright test --grep "@api|@end-to-end"    # Multiple tags
 ```
 
@@ -313,7 +313,7 @@ dotenv.config();
 
 const BASE_URL = process.env.API_BASE_URL || Routes.BASE_URL;
 
-test("GET - All Products @master @sanity @api", async ({ request }) => {
+test("GET - All Products @master @smoke @api", async ({ request }) => {
   const response = await request.get(`${BASE_URL}${Routes.GET_ALL_PRODUCTS}`);
   expect(response.status()).toBe(200);
 

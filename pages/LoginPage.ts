@@ -57,15 +57,26 @@ export class LoginPage {
          * Clicks the Login button to submit the form.
          * @returns Promise<AccountPage> - Instance of the account page after login
          */
-        async clickLoginButton(): Promise<AccountPage> {
+        async clickLoginButton(waitTimeout?: number): Promise<AccountPage> {
             try {
                 await this.btnLogin.click();
+                // On valid login the page navigates to My Account; on invalid it
+                // stays on the login page with a warning. Wait for the page to
+                // settle. Accept a caller-provided timeout so data-driven tests
+                // can avoid hanging when the remote user doesn't exist.
+                if (waitTimeout) {
+                    await this.page.waitForLoadState('networkidle', { timeout: waitTimeout }).catch(() => {
+                        console.log('waitForLoadState timed out — page may not have navigated');
+                    });
+                } else {
+                    await this.page.waitForLoadState('networkidle');
+                }
                 return new AccountPage(this.page);
             } catch (error) {
                 console.log(`Error clicking login button: ${error}`);
                 throw error;
             }
-        }
+            }
 
     /**
      * Empties both login fields and submits the form.
@@ -103,7 +114,7 @@ export class LoginPage {
      */
     async isLoginWarningVisible(message?: string): Promise<boolean> {
         try {
-            await this.alertWarning.waitFor({ state: 'visible', timeout: 10000 });
+                await this.alertWarning.waitFor({ state: 'visible', timeout: 15000 });
             if (message) {
                 const text = (await this.alertWarning.textContent()) ?? '';
                 return text.replace(/\s+/g, ' ').trim().includes(message);

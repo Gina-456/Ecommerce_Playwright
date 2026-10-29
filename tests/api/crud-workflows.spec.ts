@@ -16,7 +16,7 @@ test.describe.serial('Product CRUD Workflow', () => {
 
     let productId: number;
 
-    test('Create -> Update -> Delete product @master @sanity @api @end-to-end', async ({ request }) => {
+    test('Create -> Update -> Delete product @master @smoke @api @end-to-end', async ({ request }) => {
 
         // 1) Create a product
         const createPayload = RandomDataUtil.generateProductPayload();
@@ -59,7 +59,7 @@ test.describe.serial('User CRUD Workflow', () => {
 
     let userId: number;
 
-    test('Create -> Update -> Delete user @master @sanity @api @end-to-end', async ({ request }) => {
+    test('Create -> Update -> Delete user @master @smoke @api @end-to-end', async ({ request }) => {
 
         // 1) Create a user
         const createPayload = RandomDataUtil.generateUserPayload();
@@ -102,7 +102,7 @@ test.describe.serial('Cart CRUD Workflow', () => {
 
     let cartId: number;
 
-    test('Create -> Update -> Delete cart @master @sanity @api @end-to-end', async ({ request }) => {
+    test('Create -> Update -> Delete cart @master @smoke @api @end-to-end', async ({ request }) => {
 
         // 1) Create a cart
         const createPayload = RandomDataUtil.generateCartPayload(USER_ID);

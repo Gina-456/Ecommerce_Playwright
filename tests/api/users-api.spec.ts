@@ -19,7 +19,7 @@ test.describe('Users API Tests', () => {
     // GET - All Users
     // ---------------------------------------------------------
 
-    test('GET - All users @master @sanity @api', async ({ request }) => {
+    test('GET - All users @master @smoke @api', async ({ request }) => {
 
         const response = await request.get(`${BASE_URL}${Routes.GET_ALL_USERS}`);
 
@@ -35,7 +35,7 @@ test.describe('Users API Tests', () => {
     // GET - User by ID
     // ---------------------------------------------------------
 
-    test('GET - User by ID @master @sanity @api', async ({ request }) => {
+    test('GET - User by ID @master @smoke @api', async ({ request }) => {
 
         const response = await request.get(`${BASE_URL}${Routes.GET_USER_BY_ID.replace('{id}', String(USER_ID))}`);
 
