@@ -9,7 +9,7 @@ node_modules/
 .env
 
 # Generated reports & artifacts (tracked in git so they're visible after clone)
-# /allure-results/
+/allure-results/
 # /allure-report/
 # /reports/
 # /custom-report/
